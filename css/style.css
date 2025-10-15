@@ -109,9 +109,30 @@ button {
     align-items: center;
     gap: 4px;
 }
+button .icon-box {
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+button .icon-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+button .icon-box .off {
+    opacity: 0;
+}
 button span {
     font-size: 1.4rem;
     font-weight: 700;
     color: rgba(97, 113, 153, 1);
+}
 
+/*button on*/
+.start-btn.on {
+    background: rgba(81, 128, 255, 1);
+    cursor: pointer;
+}
+.start-btn.on span {
+    color: #fff;
 }

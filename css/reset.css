@@ -54,7 +54,6 @@ table {
 button {
     border: unset;
     display: inline-block;
-    cursor: pointer;
 }
 
 /* Chrome, Edge, Safari */
