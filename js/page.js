@@ -19,23 +19,40 @@ document.addEventListener('DOMContentLoaded', function() {
     secInput.addEventListener('change',(e)=>{isValue(e.currentTarget)})
 
     //input 값 입력시 버튼활성화
-    function isValue(name) {
-        if(name.value > 0) {
+    function isValue(target) {
+        if(target.value > 0) {
             startBtn.classList.add('on');
             startBtn.disabled = false;
             $('.start-icon').setAttribute('src',`assets/images/icon-start.svg`);
 
             resetBtn.classList.add('on');
             resetBtn.disabled = false;
-            $('.reset-icon').setAttribute('src',`assets/images/icon-reset.png`)
+            $('.reset-icon').setAttribute('src',`assets/images/icon-reset.png`);
 
-        } else if (name.value == 0) {
+        } else if (target.value == 0) {
             startBtn.classList?.remove('on');
             startBtn.disabled = true;
-            $('.start-icon').setAttribute('src',`assets/images/icon-start-disabled.svg`)
+            $('.start-icon').setAttribute('src',`assets/images/icon-start-disabled.svg`);
+
             resetBtn.classList?.remove('on');
             resetBtn.disabled = true;
-            $('.reset-icon').setAttribute('src',`assets/images/icon-reset-disabled.svg`)
+            $('.reset-icon').setAttribute('src',`assets/images/icon-reset-disabled.svg`);
+        }
+    }
+
+    //start 클릭 시 버튼 변화
+
+    startBtn.addEventListener('click',(e)=>{buttonChange(e.currentTarget)})
+
+    function buttonChange(target) {
+        if(!target.classList.contains('pause')){
+            target.classList.add('pause');
+            target.querySelector('span').textContent=`PAUSE`
+            $('.start-icon').setAttribute('src',`assets/images/icon-stop.svg`);
+        } else {
+            target.classList.remove('pause');
+            target.querySelector('span').textContent=`START`
+            $('.start-icon').setAttribute('src',`assets/images/icon-start.svg`);
         }
     }
 
