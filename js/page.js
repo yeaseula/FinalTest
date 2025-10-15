@@ -2,6 +2,7 @@ const $ = (node) => document.querySelector(node)
 
 document.addEventListener('DOMContentLoaded', function() {
     const startBtn = $('.start-btn');
+    const resetBtn = $('.reset-btn')
     const hourInput = $('.hours-input');
     const minInput = $('.min-input');
     const secInput = $('.sec-input');
@@ -14,17 +15,27 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     hourInput.addEventListener('change',(e)=>{isValue(e.currentTarget)})
+    minInput.addEventListener('change',(e)=>{isValue(e.currentTarget)})
+    secInput.addEventListener('change',(e)=>{isValue(e.currentTarget)})
 
     //input 값 입력시 버튼활성화
     function isValue(name) {
         if(name.value > 0) {
             startBtn.classList.add('on');
             startBtn.disabled = false;
-            $('.start-icon').setAttribute('src',`/assets/images/icon-start.svg`)
+            $('.start-icon').setAttribute('src',`/assets/images/icon-start.svg`);
+
+            resetBtn.classList.add('on');
+            resetBtn.disabled = false;
+            $('.reset-icon').setAttribute('src',`/assets/images/icon-reset.png`)
+
         } else if (name.value == 0) {
-            startBtn.classList.remove('on');
+            startBtn.classList?.remove('on');
             startBtn.disabled = true;
             $('.start-icon').setAttribute('src',`/assets/images/icon-start-disabled.svg`)
+            resetBtn.classList?.remove('on');
+            resetBtn.disabled = true;
+            $('.reset-icon').setAttribute('src',`/assets/images/icon-reset-disabled.svg`)
         }
     }
 

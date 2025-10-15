@@ -133,6 +133,11 @@ button span {
     background: rgba(81, 128, 255, 1);
     cursor: pointer;
 }
-.start-btn.on span {
+.reset-btn.on {
+    background: rgba(251, 112, 153, 1);
+    cursor: pointer;
+}
+.start-btn.on span,
+.reset-btn.on span {
     color: #fff;
 }
