@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const secInput = $('.sec-input');
     startBtn.addEventListener('click',()=>{
         if(hourInput.value <= 0 && minInput.value <= 0 && secInput.value <= 0) {
-            alert('입력필수')
+            alert('타이머 시간을 입력해 주세요!')
             return
         }
         handleTimer()
