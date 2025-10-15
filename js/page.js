@@ -21,23 +21,29 @@ document.addEventListener('DOMContentLoaded', function() {
     //input 값 입력시 버튼활성화
     function isValue(target) {
         if(target.value > 0) {
-            startBtn.classList.add('on');
-            startBtn.disabled = false;
-            $('.start-icon').setAttribute('src',`assets/images/icon-start.svg`);
-
-            resetBtn.classList.add('on');
-            resetBtn.disabled = false;
-            $('.reset-icon').setAttribute('src',`assets/images/icon-reset.png`);
+            buttonControlActive(startBtn)
+            buttonControlActive(resetBtn)
 
         } else if (target.value == 0) {
-            startBtn.classList?.remove('on');
-            startBtn.disabled = true;
-            $('.start-icon').setAttribute('src',`assets/images/icon-start-disabled.svg`);
-
-            resetBtn.classList?.remove('on');
-            resetBtn.disabled = true;
-            $('.reset-icon').setAttribute('src',`assets/images/icon-reset-disabled.svg`);
+            buttonControlDisable(startBtn)
+            buttonControlDisable(resetBtn)
         }
+    }
+
+    function buttonControlActive(button) {
+        const buttonName = button
+        const buttonData = buttonName.dataset.target;
+        buttonName.classList.add('on');
+        buttonName.disabled = false;
+        buttonName.querySelector('img').setAttribute('src',`assets/images/icon-${buttonData}.svg`);
+    }
+
+    function buttonControlDisable(button) {
+        const buttonName = button
+        const buttonData = buttonName.dataset.target;
+        buttonName.classList?.remove('on');
+        buttonName.disabled = true;
+        buttonName.querySelector('img').setAttribute('src',`assets/images/icon-${buttonData}-disabled.svg`);
     }
 
     //start 클릭 시 버튼 변화
