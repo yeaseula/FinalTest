@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/page.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="/assets/images/weniv-logo.svg" alt="위니브 로고">
+    </header>
+    <main>
+        <section>
+            <h2 class="sr-only">타이머</h2>
+            <p class="timer-title">TIMER</p>
+            <div class="bar"></div>
+            <div class="time-section">
+                <div class="time-cont hours">
+                    <p class="time-flag">HRS</p>
+                    <input type="number" name="hours-input" class="hours-input" value="00">
+                </div>
+                <img src="assets/images/dot.svg" alt="">
+                <div class="time-cont min">
+                    <p class="time-flag">MIN</p>
+                    <input type="number" name="min-input" class="min-input" value="00">
+                </div>
+                <img src="assets/images/dot.svg" alt="">
+                <div class="time-cont sec">
+                    <p class="time-flag">SEC</p>
+                    <input type="number" name="sec-input" class="sec-input" value="00">
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" class="start-btn">
+                    <img src="/assets/images/icon-start-disabled.svg" alt="">
+                    <span>START</span>
+                </button>
+                <button type="button" class="reset-btn">
+                    <img src="/assets/images/icon-reset-disabled.svg" alt="">
+                    <span>RESET</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+</html>
