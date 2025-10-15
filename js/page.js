@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         buttonName.querySelector('img').setAttribute('src',`assets/images/icon-${buttonData}-disabled.svg`);
     }
 
-    //start 클릭 시 버튼 변화
+    //start 클릭 => pause 변경
 
     startBtn.addEventListener('click',(e)=>{buttonChange(e.currentTarget)})
 
@@ -97,5 +97,20 @@ document.addEventListener('DOMContentLoaded', function() {
             secInput.value = String(seconds).padStart(2, '0');
 
         }, 1000);
+    }
+
+    //reset 초기화
+    resetBtn.addEventListener('click',()=>{initialize()})
+    function initialize() {
+        buttonControlDisable(startBtn)
+        buttonControlDisable(resetBtn)
+        //오버라이드
+        startBtn.classList.remove('pause')
+        startBtn.querySelector('span').textContent='START'
+
+        //input 초기화
+        hourInput.value = '00'
+        minInput.value = '00'
+        secInput.value = '00'
     }
 });
